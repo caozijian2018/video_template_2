@@ -158,7 +158,6 @@
           this.$store.commit("setPage",page);
           this.fullscreenLoading = false;
           document.querySelector('.scroll_box').scrollTop="0";
-
         }).catch(res=>{
         })
       },
@@ -174,12 +173,25 @@
 <style lang='less'>
   @import "../../../assets/css/current_theme.less";
   .paging {
+    .el-pager li.btn-quicknext{
+      color: #fff;
+    }
     .el-pagination .btn-next,
     .el-pagination .btn-prev {
       background: @gray_back;
+      color:#fff;
+    }
+    .el-pagination{
+      color:#fff;
     }
     .el-pager li {
-      background: @gray_back;
+      background: rgba(54, 54, 54, 1.0);
+      margin-left:3px;
+      margin-right:3px;
+      // color:#fff;
+      // :hover{
+      //   color:blue;
+      // }
     }
   }
 </style>

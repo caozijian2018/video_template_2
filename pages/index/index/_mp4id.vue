@@ -9,14 +9,12 @@
     import mp4 from "../../../components/mp4"
     import go4url from "../../../util/go4url"
     import getCountry from "../../../util/get_country"
-
-  import videoFooter from "../../../components/footer";
-
+    import videoFooter from "../../../components/footer";
     export default {
         components: {
             mp4,
             videoFooter
-
+    
         },
         data() {
             return {
@@ -27,16 +25,17 @@
             this.differenceOp();
         },
         methods: {
-            
-            differenceOp(){
-                var op= getCountry();
+    
+            differenceOp() {
+                var op = getCountry();
                 switch (op) {
                     case "tw":
-                        (()=>{
-                           this.getMp4src(); 
+                        (() => {
+                            this.getMp4src();
                         })()
                         break;
-                    default:this.haslogin();
+                    default:
+                        this.haslogin();
                 }
             },
             haslogin() {

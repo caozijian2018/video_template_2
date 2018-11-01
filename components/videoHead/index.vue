@@ -4,15 +4,10 @@
             <div class="display_flex flex_align_end height_100">
                 <img src="../../static/img/logo.png" class="logo_img" alt="">
                 <div class="display_flex flex_align_end   classic_box">
-                    <div>
-                        Viewd
+                    <div class="categaray">
+                        categaray
                     </div>
-                    <div>
-                        Liked
-                    </div>
-                    <div>
-                        Time
-                    </div>
+    
                 </div>
             </div>
             <div class="member_login_2_search_box width_25 display_flex flex_column">
@@ -25,7 +20,7 @@
                     <div class="font_size_8 login_text">
                         Member Login
                     </div>
-                    <div class="login_button font_size_8">
+                    <div class="login_button font_size_8 cursor" @click="showLogin()">
                         JOIN NOW
                     </div>
                 </div>
@@ -169,16 +164,16 @@
 
 <style lang='less'>
     @import "../../assets/css/current_theme";
-    @transition_time:0.4s;
+    @transition_time: 0.4s;
     .bigbox {
-        .login_text{
+        .login_text {
             min-width: 120px;
         }
-        .member_login_2_search_box{
+        .member_login_2_search_box {
             transition: @transition_time;
         }
         .search_box {
-            width:100%;
+            width: 100%;
             transition: @transition_time;
             height: 30px;
             .search_icon_button {
@@ -195,7 +190,7 @@
                 transition: @transition_time;
                 height: 100%;
                 background: #fff;
-                min-width:0;
+                min-width: 0;
                 outline: none;
                 border: none;
             }
@@ -209,8 +204,14 @@
         }
         .classic_box {
             &>div {
+                cursor: pointer;
                 margin: 0 10px;
                 font-size: 20px;
+                color: #fff;
+                transition: @transition_time;
+                &:hover {
+                    color: rgba(118, 214, 195, 1.0);
+                }
             }
         }
         overflow: hidden;
@@ -220,35 +221,34 @@
         }
         padding-bottom: 10px;
         padding-top: 10px;
-        background: @app_head_back;
+        background: lighten( @app_head_back, 19%);
         transition-duration: @transition_time;
         transition-property: height;
         .head_box {
             .logo_img {
                 height: 50px;
                 transition: @transition_time;
-
             }
         }
         &.height_scale {
-            .member_login_2_search_box{
-                width:30%;
-                flex-direction:  row-reverse;
-                align-items:center;
-                .search_box{
-                    margin-left:10px;
+            .member_login_2_search_box {
+                width: 30%;
+                flex-direction: row-reverse;
+                align-items: center;
+                .search_box {
+                    margin-left: 10px;
                     margin-bottom: 0;
-                    width:30px;
+                    width: 30px;
                 }
-                .login_button{
-                    margin-left:10px;
+                .login_button {
+                    margin-left: 10px;
                 }
-                .input_search{
+                .input_search {
                     // width: 0px;
                 }
             }
-            &{
-                height:50px;
+            & {
+                height: 50px;
             }
             .head_box {
                 .logo_img {

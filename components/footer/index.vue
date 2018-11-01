@@ -71,7 +71,7 @@
 <style lang='less'>
     @import "../../assets/css/current_theme.less";
     .describeBox {
-        background: @light_gray;
+        // background: @light_gray;
         padding: 10px;
         color: #fff;
     }

@@ -3,7 +3,7 @@
         <video-head @showLogin="showLogin" class="" :class="{height_scale:is_leave_top}"></video-head>
         <div @scroll="scroll" class="flex_1 overflow_scroll scroll_box" style="">
             <login-box v-if="show_login" @close="show_login=false"></login-box>
-            <nuxt-child :is-scroll-bottom="is_scroll_bottom"></nuxt-child>
+            <nuxt-child :is-scroll-bottom="is_leave_top"></nuxt-child>
         </div>
     </div>
 </template>

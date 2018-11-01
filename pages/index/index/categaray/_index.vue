@@ -128,11 +128,12 @@
         }
         .photntsback {
             &.top0{
-                top:0;
+                top:70px;
             }
+            transition: .4s;
             z-index: 10003;
             position: fixed;
-            top: 50px;
+            top: 110px;
             .dsfx {
                 //color:@glore;
                 font-weight: 600;

@@ -21,8 +21,8 @@
 </script>
 
 <style lang="less">
-  @import "../assets/css/iconfont/iconfont.css";
-  // @import "http://at.alicdn.com/t/font_843189_zrgmiohmyin.css";
+  // @import "../assets/css/iconfont/iconfont.css";
+  @import "http://at.alicdn.com/t/font_843189_vuo9ejmsegn.css";
   @import "../assets/css/current_theme";
   @import "../assets/css/current_app";
 

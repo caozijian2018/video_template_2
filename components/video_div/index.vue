@@ -7,21 +7,37 @@
             </div>
             <div class="hoverdiv mp4hover">
                 <div class="white pcs">
-                    WATCH IT <i class="iconfont icon-xiangyou"></i>
+                    <!-- WATCH IT <i class="iconfont icon-xiangyou"></i> -->
+                    <div class="watch_hover_box display_flex flex_jusify_space flex_align_center">
+                        <div class="iconfont icon-dianyingfilm58 black movie_icon">
+                        </div>
+                        <div class="white watch_text font_size_6"> 
+                            WATCH VIDEO
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="video_box_icon white">
                 <i class="iconfont icon-bofang"></i> {{item.video_duration | secendToTime}}
             </div>
         </div>
-        <div class="padding_1 font back_white">
-            <div class="title_text">
+        <div class="padding_1 white font ">
+            <!-- <div>
+                <div>{{item.title}}</div>
+                <div>{{item.title}}</div>
+
+            </div>
+            <div>
+                <div>{{item.title}}</div>
+                <div>{{item.title}}</div>
+            </div> -->
+            <div class="title_text white">
                 {{item.title}}
             </div>
-            <div class="box_footer display_flex flex_align_center  margin_top_10">
-                <i class="iconfont icon-shijian"></i> {{item.create_time | yearMonthDay}}
-                <i class="padding_left_1 iconfont icon-kanguo"></i> {{item.show_num+1068}}
-                <i class="padding_left_1 iconfont icon-xihuan"></i> {{item.id}}
+            <div class="box_footer white display_flex flex_align_center  margin_top_10">
+                <i class="iconfont white icon-shijian2"></i> {{item.create_time | yearMonthDay}}
+                <i class="padding_left_1 white iconfont icon-chakanguo"></i> {{item.show_num+1068}}
+                <i class="padding_left_1 white iconfont icon-xihuan"></i> {{item.id}}
             </div>
         </div>
     </div>
@@ -42,6 +58,7 @@
         },
         mounted() {
             this.setWidthandHeight();
+            console.log(this.item);
         },
         filters: {
             yearMonthDay(val) {
@@ -93,6 +110,27 @@
 <style lang='less'>
     @import "../../assets/css/current_theme";
     .video_box {
+        .watch_hover_box{
+            .watch_text{
+                margin-right:5px;
+            }
+            .movie_icon{
+                height:40px;
+                background:rgba(220, 0, 143, 1.0);
+                width:40px;
+                line-height: 40px;
+                text-align: center;
+                font-size: 20px;
+                color:#000;
+                border-radius: 50%;
+                margin-left:5px;
+            }
+            width:190px;
+            height:50px;
+            background:rgba(100,100,100,0.5);
+            border-radius:25px;
+            border:2px solid #fff;
+        }
         .title_text {
             font-size: 19px;
         }

@@ -44,6 +44,7 @@
         font-size: 19px;
         .seleced_ordering {
             font-weight: 600;
+            font-size:22px;
         }
         cursor: pointer;
         width: 600px;
@@ -51,7 +52,7 @@
             flex: 1;
             height: 50px;
             line-height: 50px;
-            color: #000;
+            color: #fff;
             text-align: center;
         }
         @media screen and (max-width:800px) {

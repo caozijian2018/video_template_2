@@ -92,6 +92,9 @@ html{
 .width_100{
     width:100%;
 }
+.width_95{
+    width:95%;
+}
 .width_90{
     width:90%;
 }
@@ -429,8 +432,14 @@ html{
 .el-message.msg{
     min-width:340px;
 }
+.phone_show{
+    display:none
+}
 /* 小于800 的尺寸 */
 @media screen and (max-width:800px){
+    .phone_show{
+        display:block;
+    }
     .el-message{
         width:90%;
 

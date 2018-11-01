@@ -163,6 +163,13 @@
             // .cate_border_bottom {
             //      display: none;
             // }
+            .photntsback{
+
+            &.top0{
+                top:108px;
+            }
+            }
+
         }
     }
 </style>

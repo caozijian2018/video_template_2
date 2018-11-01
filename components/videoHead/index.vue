@@ -2,18 +2,21 @@
     <div class="bigbox">
         <div class="head_box width_80 white margin_auto height_100 display_flex flex_jusify_space flex_align_end">
             <div class="display_flex flex_align_end height_100">
-                <img src="../../static/img/logo.png" class="logo_img" alt="">
+                <nuxt-link :to='{path:"/"}'>
+                    <img src="../../static/img/logo.png" class="logo_img" alt="">
+                </nuxt-link>
                 <div class="display_flex flex_align_end   classic_box">
                     <div class="categaray">
-                        categaray
+                        <nuxt-link :to="{path:'/categaray'}" class="white">
+                            categaray
+                        </nuxt-link>
                     </div>
-    
                 </div>
             </div>
             <div class="member_login_2_search_box width_25 display_flex flex_column">
-                <div class="margin_bottom_1 search_box display_flex flex_jusify_space">
-                    <input type="text" class="input_search flex_1">
-                    <div class="search_icon_button iconfont  icon-fangdajing">
+                <div class="margin_bottom_1 search_box display_flex flex_jusify_space"   :class="{width_100px:leave_bottom_100width}">
+                    <input @keyup.13="Search" v-model="search_word" type="text" class="input_search flex_1">
+                    <div class="search_icon_button iconfont  icon-fangdajing" @click="searchOrlongInput">
                     </div>
                 </div>
                 <div class="display_flex flex_jusify_space flex_align_center">
@@ -37,14 +40,15 @@
     import getOp from "../../util/get_country";
     
     export default {
-        // props:{
-        //     height_scale:{
-        //         default:true,
-        //         type:Boolean
-        //     }
-        // },
+        props:{
+            isLeaveTop:{
+                default:true,
+                type:Boolean
+            }
+        },
         data() {
             return {
+                leave_bottom_100width:false,
                 search_word: "",
                 clickSelect: "",
                 selectOrder: "",
@@ -75,6 +79,18 @@
             this.watchBus();
         },
         methods: {
+            searchOrlongInput(){
+                if(this.isLeaveTop){
+                    if(this.leave_bottom_100width){
+                        if(this.search_word){
+                            this.Search();
+                        }
+                    }
+                    this.leave_bottom_100width=!this.leave_bottom_100width;
+                }else{
+                    this.Search();
+                }
+            },
             watchBus() {
                 bus.$on("loginSuccess", () => {
                     this.diffrentOp();
@@ -173,6 +189,7 @@
             transition: @transition_time;
         }
         .search_box {
+            
             width: 100%;
             transition: @transition_time;
             height: 30px;
@@ -194,6 +211,7 @@
                 outline: none;
                 border: none;
             }
+            
         }
         .login_button {
             text-align: center;
@@ -239,6 +257,9 @@
                     margin-left: 10px;
                     margin-bottom: 0;
                     width: 30px;
+                    &.width_100px{
+                        width:170px;
+                    }
                 }
                 .login_button {
                     margin-left: 10px;

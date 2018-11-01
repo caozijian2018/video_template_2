@@ -58,7 +58,6 @@
         },
         mounted() {
             this.setWidthandHeight();
-            console.log(this.item);
         },
         filters: {
             yearMonthDay(val) {

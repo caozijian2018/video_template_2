@@ -280,7 +280,7 @@
         transition-property: height;
         .head_box {
             .logo_img {
-                height: 40px;
+                height: 70px;
                 transition: @transition_time;
             }
         }

@@ -45,10 +45,10 @@ module.exports = {
    "./assets/css/global_css.css"
  ],
  proxy: {
-  '/api': {
-      target: 'http://humorboom.com/backend/api/',
+  '/backend': {
+      target: 'http://humorboom.com',
       pathRewrite: {
-          '^/api': '/'
+          '^/backend': '/backend'
       }
   }
 },
